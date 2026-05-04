@@ -13,14 +13,11 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Node.js version
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22.x'
-      - name: npm install and build
-        run: cd webapp && npm install && npm run build --if-present
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - run: cd webapp && npm install && npm run build --if-present
+      - uses: actions/upload-artifact@v4
         with:
           name: node-app
           path: ./webapp
@@ -32,18 +29,15 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: node-app
-      - name: Login to Azure
-        uses: azure/login@v2
+      - uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_24B4473300684B619B4EDE5309E8F70F }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_24B4473300684B619B4EDE5309E8F70F }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_24B4473300684B619B4EDE5309E8F70F }}
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2F1F219EBF90432AAA2CDAB02D871CFF }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8F7BDA6BA8084A3E9A5FE62FA9BA18E4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AEACA54794454135AA65577907E3CC1E }}
+      - uses: azure/webapps-deploy@v3
         with:
           app-name: 'pa4-27100206'
           slot-name: 'Production'
