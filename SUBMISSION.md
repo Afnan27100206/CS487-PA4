@@ -659,7 +659,7 @@ Durable Functions persists state, enabling reliable recovery across host failure
 
 Azure Cost Management for resource group `rg-sp26-27100206`:
 
-![costanalysis](docs/costanalysis)
+![costanalysis](docs/costanalysis.png)
 
 ---
 
