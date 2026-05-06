@@ -4,7 +4,7 @@
 
 ![GitHub Only](https://img.shields.io/badge/Submit-GitHub%20URL%20Only-10b981?style=for-the-badge)
 ![Total Points](https://img.shields.io/badge/Total-100%20points-7c3aed?style=for-the-badge)
-![Architecture](https://img.shields.io/badge/Architecture-Enterprise%20Grade-0078d4?style=for-the-badge)
+
 
 </div>
 
@@ -23,18 +23,7 @@
 
 ---
 
-## Evidence Submission Standards
 
-All evidence follows Azure Portal and CLI documentation standards:
-
-- ✅ **Relative image paths** using the `docs/` folder structure
-- ✅ **Azure Portal screenshots** show resource name and identifying context
-- ✅ **CLI screenshots** include full command and output
-- ✅ **1–3 sentence descriptions** below each image for context
-- ✅ **Secrets masked**: Function keys, ACR passwords, storage connection strings
-- ✅ **GitHub-render friendly** formatting for reliable display
-
----
 
 # Task 1: App Service Web App (15 points)
 
@@ -48,7 +37,7 @@ Working fork of the CS487-PA4 starter repository. Contains the full project stru
 
 ## Evidence 1.2: App Service Overview
 
-![App Service Overview](docs/task1/1.png)
+![App Service Overview](docs/task1/2.png)
 
 Web App `pa4-27100206` deployed to resource group `rg-sp26-27100206` in UK West region, running Node.js 22 LTS on Linux. Public URL: `https://pa4-27100206.azurewebsites.net/`
 
@@ -56,7 +45,7 @@ Web App `pa4-27100206` deployed to resource group `rg-sp26-27100206` in UK West 
 
 ## Evidence 1.3: GitHub Actions CI/CD
 
-![Deployment Center](docs/task1/2.png)
+![Deployment Center](docs/task1/3.png)
 
 Deployment Center connected to GitHub repository with automatic deployment on every push to the `main` branch. GitHub Actions workflow pulls from the starter repository, builds the Node.js frontend, and deploys to App Service.
 
@@ -64,7 +53,7 @@ Deployment Center connected to GitHub repository with automatic deployment on ev
 
 ## Evidence 1.4: Live Web Application
 
-![TaskFlow UI](docs/task1/3.png)
+![TaskFlow UI](docs/task1/4.png)
 
 TaskFlow order submission form is live and accessible at `pa4-27100206.azurewebsites.net`. The frontend UI successfully loads and displays the order entry interface, confirming that App Service is serving static and dynamic content correctly.
 
@@ -294,7 +283,7 @@ Confirms the report-job container:
 
 ## Evidence 6.4: Generated PDF in Blob Storage
 
-![PDFs in Blob](docs/task6/5.png)
+![PDFs in Blob](docs/task6/3%20&%204.png)
 
 Portal view of `reports` container showing successfully generated and uploaded PDF files from multiple order runs. Each PDF is named with the order ID and is accessible via blob URI.
 
@@ -302,7 +291,7 @@ Portal view of `reports` container showing successfully generated and uploaded P
 
 ## Evidence 6.5: Function App System-Assigned Identity
 
-![Function Identity](docs/task6/6.png)
+![Function Identity](docs/task6/5.png)
 
 Function App `pa4-27100206-fn` Identity blade showing:
 - User-assigned identity: `mi-pa4-27100206` attached
@@ -317,6 +306,7 @@ This managed identity enables:
 
 ## Evidence 6.6: Function App Environment Configuration
 
+![App Settings](docs/task6/6.png)
 ![App Settings](docs/task6/6.1.png)
 
 Function App `pa4-27100206-fn` environment variables showing all required runtime configuration (with secrets masked):
@@ -340,7 +330,6 @@ These variables are read by `report_activity` at runtime to dynamically create a
 
 ## Evidence 7.1: Web App Function Wiring
 
-![Web App Config](docs/task7/Screenshot%202026-05-05%20at%207.19.28%20PM.png)
 
 Web App `pa4-27100206` environment variables showing the complete wiring:
 - `FUNCTION_START_URL`: Points to the HTTP starter endpoint for orchestration startup
@@ -742,41 +731,6 @@ Python 3.11's importlib is compatible with six's custom hooks. `func start` then
 
 ---
 
-# Task 8.7: Full-Marks Submission Quality Review
-
-## Completeness Checklist
-
-| Requirement | Status | Evidence |
-|-------------|--------|----------|
-| **GitHub fork present** | ✅ Complete | Repo `Afnan27100206/CS487-PA4` exists and linked |
-| **App Service deployed from GitHub Actions** | ✅ Complete | Task 1 Evidence 1.2–1.4 |
-| **All three Dockerfiles working** | ✅ Complete | Task 2 Evidence 2.2 shows builds |
-| **Images pushed to ACR** | ✅ Complete | Task 2 Evidence 2.3 shows repos |
-| **Durable Orchestrator implemented** | ✅ Complete | Task 3 Evidence 3.1 code + 3.2 handlers |
-| **Function App deployed from container** | ✅ Complete | Task 4 Evidence 4.1–4.4 |
-| **AKS validator service running** | ✅ Complete | Task 5 Evidence 5.1–5.6 |
-| **ACI report job working** | ✅ Complete | Task 6 Evidence 6.1–6.6 |
-| **Happy path E2E tested** | ✅ Complete | Task 7 Evidence 7.2–7.3 |
-| **Rejection path E2E tested** | ✅ Complete | Task 7 Evidence 7.4 |
-| **Architecture documented** | ✅ Complete | Task 8 Evidence 8.1–8.3 |
-| **Service selection justified** | ✅ Complete | Task 8 Evidence 8.2 |
-| **Cost analysis provided** | ✅ Complete | Task 8 Evidence 8.5 |
-| **Challenges documented** | ✅ Complete | Task 8 Evidence 8.6 |
-| **All images properly linked** | ✅ Complete | Corrected folder paths verified |
-| **No broken markdown** | ✅ Complete | Links relative to `docs/` folder |
-| **GitHub-render compatible** | ✅ Complete | Standard Markdown + code blocks |
-
-## Submission Quality Level
-
-- **Organization:** Enterprise-grade, hierarchical structure with consistent formatting
-- **Technical Depth:** Full explanation of each service with architectural rationale
-- **Evidence:** 20+ screenshots covering all requirements with 1–3 sentence context
-- **Architecture:** Comprehensive diagram showing data flow, services, and Azure RBAC
-- **Documentation:** Challenges, cost analysis, and service selection all justified in detail
-
-**Final Verdict:** **100/100 points** — University submission ready for top-tier grading and portfolio use.
-
----
 
 <div align="center">
 
