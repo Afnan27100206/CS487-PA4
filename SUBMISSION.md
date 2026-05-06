@@ -659,17 +659,7 @@ Durable Functions persists state, enabling reliable recovery across host failure
 
 Azure Cost Management for resource group `rg-sp26-27100206`:
 
-| Resource | Cost/Month (Estimated) | Justification |
-|----------|------------------------|---------------|
-| **AKS Node (Standard_B2s, 1 node)** | $30–40 | Continuous VM; largest cost driver |
-| **Function App (Consumption)** | $1–2 | Minimal test load; pennies/GBS |
-| **App Service (Basic B1)** | $10–15 | Warm VM with minimal traffic |
-| **Storage Account (Cool tier)** | $0.50 | Small blobs in `reports` container |
-| **Container Registry (Basic)** | $5–10 | Minimal storage; no egress charges |
-| **Managed Identity** | Free | Azure RBAC assignment no charge |
-| **Data transfer (ingress)** | Free/negligible | Internal Azure traffic free |
-
-**Total estimated:** $50–75/month during active assignment period. AKS is by far the dominant cost.
+![costanalysis](docs/costanalysis)
 
 ---
 
